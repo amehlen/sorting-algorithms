@@ -6,13 +6,13 @@ public class BubbleSort implements SortStrategy {
 
   @Override
   public void sort(int[] numbers) {
-    boolean changesDone = true;
-    for (int i = 0; i < numbers.length && changesDone; i++) {
-      changesDone = false;
+    boolean hasSwapped = true;
+    for (int i = 0; i < numbers.length && hasSwapped; i++) {
+      hasSwapped = false;
       for (int j = 0; j < numbers.length - i - 1; j++) {
         if (numbers[j] > numbers[j + 1]) {
           swap(numbers, j, j + 1);
-          changesDone = true;
+          hasSwapped = true;
         }
       }
     }
