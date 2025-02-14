@@ -11,13 +11,17 @@ public class BubbleSort implements SortStrategy {
       changesDone = false;
       for (int j = 0; j < numbers.length - i - 1; j++) {
         if (numbers[j] > numbers[j + 1]) {
-          int temp = numbers[j];
-          numbers[j] = numbers[j + 1];
-          numbers[j + 1] = temp;
+          swap(numbers, j, j + 1);
           changesDone = true;
         }
       }
     }
+  }
+
+  private static void swap(int[] numbers, int index1, int index2) {
+    int temp = numbers[index1];
+    numbers[index1] = numbers[index2];
+    numbers[index2] = temp;
   }
 
 }
