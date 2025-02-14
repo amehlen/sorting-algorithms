@@ -1,5 +1,7 @@
 package de.amehlen;
 
+import de.amehlen.numbers.NumberGenerator;
+import de.amehlen.numbers.NumberGeneratorFactory;
 import de.amehlen.sortings.SortingContext;
 import de.amehlen.sortings.algorithms.BubbleSort;
 import de.amehlen.sortings.algorithms.InsertionSort;
@@ -12,9 +14,11 @@ public class App {
   private static final Logger LOGGER = LogManager.getLogger(App.class);
 
   public static void main(String[] args) {
+    NumberGenerator numberGenerator = NumberGeneratorFactory.createNumberGenerator("random");
+
     LOGGER.info("Selection Sort");
 
-    int[] numbers = {5, 2, 9, 1, 5, 8, 3, 7, 4, 2, 6, 1, 3, 9, 5};
+    int[] numbers = numberGenerator.generate(15, 10, 20);
     LOGGER.info("Unsorted numbers: {}", numbers);
 
     SortingContext sortingContext = new SortingContext(new InsertionSort());
@@ -24,7 +28,7 @@ public class App {
 
     LOGGER.info("Insertion Sort");
 
-    numbers = new int[]{5, 2, 9, 1, 5, 8, 3, 7, 4, 2, 6, 1, 3, 9, 5};
+    numbers = numberGenerator.generate(10, 0, 15);
     LOGGER.info("Unsorted numbers: {}", numbers);
 
     sortingContext.setSortStrategy(new SelectionSort());
@@ -34,7 +38,7 @@ public class App {
 
     LOGGER.info("Bubble Sort");
 
-    numbers = new int[]{5, 2, 9, 1, 5, 8, 3, 7, 4, 2, 6, 1, 3, 9, 5};
+    numbers = numberGenerator.generate(20, 25, 50);
     LOGGER.info("Unsorted numbers: {}", numbers);
 
     sortingContext.setSortStrategy(new BubbleSort());
