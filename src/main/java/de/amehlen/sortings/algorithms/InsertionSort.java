@@ -1,8 +1,13 @@
 package de.amehlen.sortings.algorithms;
 
 import de.amehlen.sortings.SortStrategy;
+import java.util.Arrays;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class InsertionSort implements SortStrategy {
+
+  private static final Logger LOGGER = LogManager.getLogger(InsertionSort.class);
 
   @Override
   public void sort(int[] numbers) {
@@ -15,6 +20,7 @@ public class InsertionSort implements SortStrategy {
         j = j - 1;
       }
       numbers[j + 1] = key;
+      LOGGER.info("Iteration {}: {}", i, Arrays.toString(numbers));
     }
   }
 }
