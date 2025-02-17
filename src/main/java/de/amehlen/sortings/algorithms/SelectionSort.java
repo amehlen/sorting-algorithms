@@ -10,6 +10,10 @@ public class SelectionSort implements SortStrategy {
 
   @Override
   public int[] sort(int[] numbers) {
+    if (numbers == null) {
+      throw new IllegalArgumentException("The passed array must not be zero.");
+    }
+
     int length = numbers.length;
     for (int i = 0; i < length - 1; i++) {
       int min = i;

@@ -10,6 +10,10 @@ public class InsertionSort implements SortStrategy {
 
   @Override
   public int[] sort(int[] numbers) {
+    if (numbers == null) {
+      throw new IllegalArgumentException("The passed array must not be zero.");
+    }
+
     for (int i = 1; i < numbers.length; i++) {
       int key = numbers[i];
       int j = i - 1;

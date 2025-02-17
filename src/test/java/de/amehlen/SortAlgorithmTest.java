@@ -1,6 +1,7 @@
 package de.amehlen;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Named.named;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
@@ -111,6 +112,19 @@ class SortAlgorithmTest {
 
       // Then
       assertArrayEquals(expected, sorted);
+    }
+
+  }
+
+  @Nested
+  @DisplayName("Negative test cases for the sorting algorithms")
+  class NegativeTestCases {
+
+    @DisplayName("Null value as input")
+    @ParameterizedTest
+    @ArgumentsSource(SortingAlgorithms.class)
+    void testNullInput(SortStrategy sortStrategy) {
+      assertThrows(IllegalArgumentException.class, () -> sortStrategy.sort(null));
     }
 
   }

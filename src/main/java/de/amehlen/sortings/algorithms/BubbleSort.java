@@ -10,6 +10,10 @@ public class BubbleSort implements SortStrategy {
 
   @Override
   public int[] sort(int[] numbers) {
+    if (numbers == null) {
+      throw new IllegalArgumentException("The passed array must not be zero.");
+    }
+
     boolean hasSwapped = true;
     for (int i = 0; i < numbers.length && hasSwapped; i++) {
       hasSwapped = false;
