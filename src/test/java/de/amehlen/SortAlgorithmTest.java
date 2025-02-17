@@ -26,54 +26,90 @@ class SortAlgorithmTest {
     @ParameterizedTest(name = "{index} => Algorithm: {1}")
     @ArgumentsSource(SortingAlgorithms.class)
     void testUnsortedArray(SortStrategy sortStrategy, String algorithmName) {
+      // Given
       int[] input = {3, 1, 4, 1, 5};
       int[] expected = {1, 1, 3, 4, 5};
-      assertArrayEquals(expected, sortStrategy.sort(input));
+
+      // When
+      int[] sorted = sortStrategy.sort(input);
+
+      // Then
+      assertArrayEquals(expected, sorted);
     }
 
     @DisplayName("Sorting an sorted list")
     @ParameterizedTest(name = "{index} => Algorithm: {1}")
     @ArgumentsSource(SortingAlgorithms.class)
     void testSortedArray(SortStrategy sortStrategy, String algorithmName) {
+      // Given
       int[] input = {1, 1, 3, 4, 5};
       int[] expected = {1, 1, 3, 4, 5};
-      assertArrayEquals(expected, sortStrategy.sort(input));
+
+      // When
+      int[] sorted = sortStrategy.sort(input);
+
+      // Then
+      assertArrayEquals(expected, sorted);
     }
 
     @DisplayName("Sorting an empty list")
     @ParameterizedTest(name = "{index} => Algorithm: {1}")
     @ArgumentsSource(SortingAlgorithms.class)
     void testSortEmptyArray(SortStrategy sortStrategy, String algorithmName) {
+      // Given
       int[] input = {};
       int[] expected = {};
-      assertArrayEquals(expected, sortStrategy.sort(input));
+
+      // When
+      int[] sorted = sortStrategy.sort(input);
+
+      // Then
+      assertArrayEquals(expected, sorted);
     }
 
     @DisplayName("Sorting a list with a single element")
     @ParameterizedTest(name = "{index} => Algorithm: {1}")
     @ArgumentsSource(SortingAlgorithms.class)
     void testSortSingleElementArray(SortStrategy sortStrategy, String algorithmName) {
+      // Given
       int[] input = {42};
       int[] expected = {42};
-      assertArrayEquals(expected, sortStrategy.sort(input));
+
+      // When
+      int[] sorted = sortStrategy.sort(input);
+
+      // Then
+      assertArrayEquals(expected, sorted);
     }
 
     @DisplayName("Sorting a list with duplicates")
     @ParameterizedTest(name = "{index} => Algorithm: {1}")
     @ArgumentsSource(SortingAlgorithms.class)
     void testSortWithDuplicates(SortStrategy sortStrategy, String algorithmName) {
+      // Given
       int[] input = {5, 3, 3, 2, 5};
       int[] expected = {2, 3, 3, 5, 5};
-      assertArrayEquals(expected, sortStrategy.sort(input));
+
+      // When
+      int[] sorted = sortStrategy.sort(input);
+
+      // Then
+      assertArrayEquals(expected, sorted);
     }
 
     @DisplayName("Sorting a list with negative numbers")
     @ParameterizedTest(name = "{index} => Algorithm: {1}")
     @ArgumentsSource(SortingAlgorithms.class)
     void testSortWithNegativeNumbers(SortStrategy sortStrategy, String algorithmName) {
+      // Given
       int[] input = {-3, -1, -4, -2};
       int[] expected = {-4, -3, -2, -1};
-      assertArrayEquals(expected, sortStrategy.sort(input));
+
+      // When
+      int[] sorted = sortStrategy.sort(input);
+
+      // Then
+      assertArrayEquals(expected, sorted);
     }
 
   }
