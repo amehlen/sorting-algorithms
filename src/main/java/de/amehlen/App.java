@@ -22,9 +22,9 @@ public class App {
     LOGGER.info("Unsorted numbers: {}", numbers);
 
     SortingContext sortingContext = new SortingContext(new InsertionSort());
-    sortingContext.performSort(numbers);
+    int[] sorted = sortingContext.performSort(numbers);
 
-    LOGGER.info("Sorted numbers: {}", numbers);
+    LOGGER.info("Sorted numbers: {}", sorted);
 
     LOGGER.info("Insertion Sort");
 
@@ -32,9 +32,9 @@ public class App {
     LOGGER.info("Unsorted numbers: {}", numbers);
 
     sortingContext.setSortStrategy(new SelectionSort());
-    sortingContext.performSort(numbers);
+    sorted = sortingContext.performSort(numbers);
 
-    LOGGER.info("Sorted numbers: {}", numbers);
+    LOGGER.info("Sorted numbers: {}", sorted);
 
     LOGGER.info("Bubble Sort");
 
@@ -42,9 +42,9 @@ public class App {
     LOGGER.info("Unsorted numbers: {}", numbers);
 
     sortingContext.setSortStrategy(new BubbleSort());
-    sortingContext.performSort(numbers);
+    sorted = sortingContext.performSort(numbers);
 
-    LOGGER.info("Sorted numbers: {}", numbers);
+    LOGGER.info("Sorted numbers: {}", sorted);
   }
 
 }

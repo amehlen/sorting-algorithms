@@ -10,7 +10,7 @@ public class BubbleSort implements SortStrategy {
   private static final Logger LOGGER = LogManager.getLogger(BubbleSort.class);
 
   @Override
-  public void sort(int[] numbers) {
+  public int[] sort(int[] numbers) {
     boolean hasSwapped = true;
     for (int i = 0; i < numbers.length && hasSwapped; i++) {
       hasSwapped = false;
@@ -22,7 +22,7 @@ public class BubbleSort implements SortStrategy {
       }
       LOGGER.info("Iteration {}: {}", i, Arrays.toString(numbers));
     }
-
+    return numbers;
   }
 
   private static void swap(int[] numbers, int index1, int index2) {

@@ -10,7 +10,7 @@ public class InsertionSort implements SortStrategy {
   private static final Logger LOGGER = LogManager.getLogger(InsertionSort.class);
 
   @Override
-  public void sort(int[] numbers) {
+  public int[] sort(int[] numbers) {
     for (int i = 1; i < numbers.length; i++) {
       int key = numbers[i];
       int j = i - 1;
@@ -22,5 +22,6 @@ public class InsertionSort implements SortStrategy {
       numbers[j + 1] = key;
       LOGGER.info("Iteration {}: {}", i, Arrays.toString(numbers));
     }
+    return numbers;
   }
 }

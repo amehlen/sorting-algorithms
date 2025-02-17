@@ -10,7 +10,7 @@ public class SelectionSort implements SortStrategy {
   private static final Logger LOGGER = LogManager.getLogger(SelectionSort.class);
 
   @Override
-  public void sort(int[] numbers) {
+  public int[] sort(int[] numbers) {
     int length = numbers.length;
     for (int i = 0; i < length - 1; i++) {
       int min = i;
@@ -24,6 +24,7 @@ public class SelectionSort implements SortStrategy {
       swap(numbers, i, min);
       LOGGER.info("Iteration {}: {}", i, Arrays.toString(numbers));
     }
+    return numbers;
   }
 
   private static void swap(int[] numbers, int index1, int index2) {
