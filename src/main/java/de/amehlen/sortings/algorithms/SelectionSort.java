@@ -1,7 +1,6 @@
 package de.amehlen.sortings.algorithms;
 
 import de.amehlen.sortings.SortStrategy;
-import java.util.Arrays;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,7 +21,7 @@ public class SelectionSort implements SortStrategy {
       }
 
       swap(numbers, i, min);
-      LOGGER.info("Iteration {}: {}", i, Arrays.toString(numbers));
+      LOGGER.info("Iteration {}: {}", i, numbers);
     }
     return numbers;
   }

@@ -1,7 +1,6 @@
 package de.amehlen.sortings.algorithms;
 
 import de.amehlen.sortings.SortStrategy;
-import java.util.Arrays;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,7 +19,7 @@ public class InsertionSort implements SortStrategy {
         j = j - 1;
       }
       numbers[j + 1] = key;
-      LOGGER.info("Iteration {}: {}", i, Arrays.toString(numbers));
+      LOGGER.info("Iteration {}: {}", i, numbers);
     }
     return numbers;
   }
