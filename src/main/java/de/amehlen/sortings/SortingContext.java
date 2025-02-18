@@ -12,7 +12,7 @@ public class SortingContext {
     this.sortStrategy = sortStrategy;
   }
 
-  public int[] performSort(int[] numbers) {
-    return sortStrategy.sort(numbers);
+  public int[] performSort(int[] numbers, SortOrder sortOrder) {
+    return sortStrategy.sort(numbers, sortOrder);
   }
 }
