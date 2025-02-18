@@ -15,7 +15,7 @@ public class App {
   private static final Logger LOGGER = LogManager.getLogger(App.class);
 
   public static void main(String[] args) {
-    NumberGenerator numberGenerator = NumberGeneratorFactory.createNumberGenerator("random");
+    NumberGenerator numberGenerator = NumberGeneratorFactory.createNumberGenerator("sorted");
 
     LOGGER.info("Selection Sort - Ascending Order");
 
